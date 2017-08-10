@@ -1,0 +1,17 @@
+/vendor
+/bootstrap/compiled.php
+.env.*.php
+.env.php
+.env
+.phpstorm.meta.php
+_ide_helper_models.php
+/.idea
+/composer.phar
+/node_modules
+
+/storage/app/*
+!/storage/app/.gitignore
+
+_ide_helper.php
+error.log
+access.log
