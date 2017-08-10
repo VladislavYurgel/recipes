@@ -44,11 +44,14 @@ class Recipes extends \Eloquent
     /**
      * Get all ingredients for recipe
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
     public function ingredients()
     {
-        return $this->hasMany(RecipeIngredients::class, 'recipe_id');
+        $ingredients = RecipeIngredients::where('recipe_id', $this->id)
+            ->with(['ingredient', 'countType'])
+            ->get();
+        return $ingredients;
     }
 
     /**

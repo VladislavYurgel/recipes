@@ -10,6 +10,10 @@ class RecipeImages extends \Eloquent
         'recipe_id', 'image_index', 'path'
     ];
 
+    protected $hidden = [
+        'created_at', 'updated_at'
+    ];
+
     /**
      * Get recipe by recipe image
      *

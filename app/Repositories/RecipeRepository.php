@@ -48,7 +48,8 @@ class RecipeRepository
      */
     public function get($recipeId)
     {
-        $recipe = Recipes::with(['images', 'ingredients', 'steps'])->where('id', $recipeId)->first();
+        $recipe = Recipes::with(['images', 'steps'])->where('id', $recipeId)->first();
+        $recipe['ingredients'] = $recipe->ingredients();
         foreach ($recipe->steps as $key => $step) {
             $recipe->steps[$key]['images'] = $step->images;
         }

@@ -10,6 +10,10 @@ class RecipeSteps extends \Eloquent
         'step_index', 'text'
     ];
 
+    protected $hidden = [
+        'created_at', 'updated_at'
+    ];
+
     /**
      * Get recipe step images
      *

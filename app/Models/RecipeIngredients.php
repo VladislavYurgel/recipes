@@ -10,6 +10,10 @@ class RecipeIngredients extends \Eloquent
         'recipe_id', 'ingredient_id', 'count_type', 'count'
     ];
 
+    protected $hidden = [
+        'created_at', 'updated_at'
+    ];
+
     /**
      * Get ingredient
      *
